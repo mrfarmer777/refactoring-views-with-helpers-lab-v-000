@@ -2,7 +2,7 @@ class Song < ActiveRecord::Base
   belongs_to :artist
 
   def artist_name
-    if self.artist.persisted?
+    if self.artist.present?
       self.artist.name
     else
       nil
